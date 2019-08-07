@@ -1,7 +1,8 @@
+
 //establish variables
 
 //computer word options
-var words = ["tester", "practice", "thinking", "lesson", "random", "xylophone", "dynamic", "wonderful", "enjoy", "amazed"];
+var words = ["zoo", "my", "tester", "practice", "thinking", "lesson", "random", "xylophone", "dynamic", "wonderful", "enjoy", "amazed"];
 
 //current word being solved
 var puzzle = "";
@@ -31,7 +32,37 @@ var wins = document.getElementById("win");
 
 //game play
 
+// This function is run whenever the user presses a key.
+document.onkeyup = function(event) {
 
+    //capture key press
+    var userGuess = event.key;
+
+    // Randomly chooses a word from the words array.
+    var computerGuess = words[Math.floor(Math.random() * words.length)];
+
+    var convertedWord = "_";
+
+    //convert word to underscore
+    for (i=1; i<computerGuess.length; i++) {
+        convertedWord = convertedWord + " _";
+    }
+    currentWord.textContent = convertedWord;
+
+    // if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+    //     // Display user guess on screen
+    //     userChoice.textContent = userGuess;
+
+    //     //Display computer guess on screen
+    //     compChoice.textContent = computerGuess;
+    // }
+
+
+
+
+
+
+    };
 //computer randomly select word
 //display word with an underscore for each letter
 //use onkeyup to get pressed letter from player

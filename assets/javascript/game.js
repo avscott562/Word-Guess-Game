@@ -1,11 +1,37 @@
-
-
 //establish variables
-//need words array for computer to select from
-//need array to capture guessed letters
+
+//computer word options
+var words = ["tester", "practice", "thinking", "lesson", "random", "xylophone", "dynamic", "wonderful", "enjoy", "amazed"];
+
+//current word being solved
+var puzzle = "";
+
+//grab current word id
+var currentWord = document.getElementById("currentWord");
+
+//array of guessed letters
+var guessedLetters = [];
+
+//grab guessed letters id
+var used = document.getElementById("used");
+
 //need variable to capture key press
 
+//number of remaining guesses
+var remaining = 12;
+
+//grab guesses id
+var guesses = document.getElementById("guess");
+
+//number of wins
+var winCount = 0;
+
+//grab win id
+var wins = document.getElementById("win");
+
 //game play
+
+
 //computer randomly select word
 //display word with an underscore for each letter
 //use onkeyup to get pressed letter from player

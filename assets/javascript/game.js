@@ -2,10 +2,10 @@
 //establish variables
 
 //computer word options
-var words = ["zoo", "my", "tester", "practice", "thinking", "lesson", "random", "xylophone", "dynamic", "wonderful", "enjoy", "amazed"];
+var words = ["zoo", "my", "tester", "my first game", "tree", "why do you ask", "practice", "we", "is", "thinking", "lesson", "random", "xylophone", "dynamic", "wonderful", "enjoy", "amazed", "test this word"];
 
 //current word being solved
-var puzzle = "";
+var puzzle;
 
 //grab current word id
 var currentWord = document.getElementById("currentWord");
@@ -32,44 +32,62 @@ var wins = document.getElementById("win");
 
 //game play
 
-// This function is run whenever the user presses a key.
+var alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+var start = 0;
+
+// start game
 document.onkeyup = function(event) {
 
-    //capture key press
-    var userGuess = event.key;
-
-    // Randomly chooses a word from the words array.
+    //computer randomly selects word
     var computerGuess = words[Math.floor(Math.random() * words.length)];
 
-    var convertedWord = "_";
+    var convertedWord = [];
 
     //convert word to underscore
-    for (i=1; i<computerGuess.length; i++) {
-        convertedWord = convertedWord + " _";
+    for (i=0; i<computerGuess.length; i++) {
+        puzzle = computerGuess;
+        if (computerGuess[i] === " ") {
+            convertedWord.push(" ");
+            console.log(convertedWord);
+        } else {
+            convertedWord.push("_");
+        }
+        console.log(puzzle);
     }
-    currentWord.textContent = convertedWord;
+    currentWord.textContent = convertedWord.join(" ");
 
-    // if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
-    //     // Display user guess on screen
-    //     userChoice.textContent = userGuess;
+    // console.log(computerGuess + " " + computerGuess.length);
+};
 
-    //     //Display computer guess on screen
-    //     compChoice.textContent = computerGuess;
-    // }
+// user guess
+document.onkeyup = function(event) {
+
+    //capture letter pressed by player
+    var userGuess = event.key;
+
+    //checking if key pressed is listed in available letters
+    var letter = alpha.indexOf(userGuess.toUpperCase());
+
+    //if in available letters array,
+    if (letter !== -1) {
+
+        //add to guessed letters array
+        guessedLetters.push(userGuess.toUpperCase());
+
+        //display in guessed letters on screen
+        guesses.textContent = guessedLetters.join(" ");
+
+        //remove from available letter list
+        alpha.splice(letter, 1);
+    }
+};
 
 
 
 
-
-
-    };
-//computer randomly select word
-//display word with an underscore for each letter
-//use onkeyup to get pressed letter from player
-//verify pressed key is a letter and not a number or special character
 //if pressed key is a letter, check to see if letter is in word
 //if letter is in word, change underscore in word for each appearance of the letter to the letter
 //if letter is not in word, lower remainaing guesses count by 1.
-//add guessed letter to guessed letters field
 //once word guessed, up wins count by 1
 //if word not guessed before remaining guesses = 0, notify game over and reveal word.

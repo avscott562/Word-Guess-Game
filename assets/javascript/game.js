@@ -101,7 +101,9 @@ document.onkeyup = function(event) {
                 }
             }
         } else {
+            //if letter not in puzzle, reduce remaining guess count by 1
             remaining--
+            //display remaining guesses count on screen
             guesses.textContent = remaining;
         }
     }
@@ -118,21 +120,18 @@ function gameOver() {
         //display wins count on screen
         wins.textContent = winCount;
         //notfy player game over
-        alert("You guessed it!  The answer is " + puzzle.toUpperCase() + ".  Great job!");
-        //see if they want to play again
-        play = confirm("Another Round?");
+        alert("You guessed it!  The answer is " + puzzle.toUpperCase() + ".  Great job!  Another Round?");
+        //start new game
         resetGame();
     } else if (remaining === 0) {
         //once player has no remaining guesses, notify game over
-        alert("Game Over!  The answer is " + puzzle.toUpperCase() + ".");
-        //see if they want to play again
-        play = confirm("Try Again?");
+        alert("Game Over!  The answer is " + puzzle.toUpperCase() + ".  Try Again?");
+        //start new game
         resetGame()
     }
 }
 
 function resetGame() {
-    if (play) {
     //reset all of the variables except wins
     alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     remaining = 12;
@@ -147,5 +146,4 @@ function resetGame() {
 
     //start new game
     newGame();
-    }
 }

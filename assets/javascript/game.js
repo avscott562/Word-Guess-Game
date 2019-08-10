@@ -95,6 +95,12 @@ document.onkeyup = function(event) {
                     convertedWord[p] = userGuess.toUpperCase();
                     //display new convertedWord on screen
                     currentWord.textContent = convertedWord.join(" ");
+                    //once word guessed, up wins count by 1
+                    if (!convertedWord.includes("_")) {
+                        winCount++;
+                        wins.textContent = winCount;
+                        alert("You did it! Another round?");
+                    }
                 } 
             }
         } else {
@@ -105,31 +111,5 @@ document.onkeyup = function(event) {
                 newGame();
             }
         }
-
-        // puzzle = "delete";
-
-        // //just for testing
-        // currentWord.textContent = "_ _ _ _ _ _"
-
-        // var wordLetter = puzzle.toUpperCase().indexOf(userGuess.toUpperCase());
-
-        // console.log(wordLetter);
-
-        //use replace() to find letter and replace _ with actual letter
-        
-        // if (wordLetter === -1) {
-        //     remaining--;
-        // } else {
-        //     console.log(wordLetter);
-        // }
     }
 };
-
-
-
-
-//if pressed key is a letter, check to see if letter is in word
-//if letter is in word, change underscore in word for each appearance of the letter to the letter
-//if letter is not in word, lower remainaing guesses count by 1.
-//once word guessed, up wins count by 1
-//if word not guessed before remaining guesses = 0, notify game over and reveal word.

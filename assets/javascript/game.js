@@ -39,7 +39,7 @@ var alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N
 //play again?
 var play;
 
-// start game
+// start new game
 function newGame() {
 
         //computer randomly selects word
@@ -112,6 +112,7 @@ document.onkeyup = function(event) {
     gameOver();
 };
 
+//check if game is over
 function gameOver() {
     //once word guessed
     if (!convertedWord.includes("_")) {
@@ -131,6 +132,7 @@ function gameOver() {
     }
 }
 
+//reset game stats and start new game
 function resetGame() {
     //reset all of the variables except wins
     alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];

@@ -36,6 +36,9 @@ var wins = document.getElementById("win");
 //valid letters
 var alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
+//play again?
+var play;
+
 // start game
 function newGame() {
 
@@ -95,21 +98,54 @@ document.onkeyup = function(event) {
                     convertedWord[p] = userGuess.toUpperCase();
                     //display new convertedWord on screen
                     currentWord.textContent = convertedWord.join(" ");
-                    //once word guessed, up wins count by 1
-                    if (!convertedWord.includes("_")) {
-                        winCount++;
-                        wins.textContent = winCount;
-                        alert("You did it! Another round?");
-                    }
-                } 
+                }
             }
         } else {
             remaining--
             guesses.textContent = remaining;
-            if (remaining === 0) {
-                alert("Game Over!  Try Again?")
-                newGame();
-            }
         }
     }
+
+    //check to see if game is completed
+    gameOver();
 };
+
+function gameOver() {
+    //once word guessed
+    if (!convertedWord.includes("_")) {
+        //up wins count by 1
+        winCount++;
+        //display wins count on screen
+        wins.textContent = winCount;
+        //notfy player game over
+        alert("You guessed it!  The answer is " + puzzle.toUpperCase() + ".  Great job!");
+        //see if they want to play again
+        play = confirm("Another Round?");
+        resetGame();
+    } else if (remaining === 0) {
+        //once player has no remaining guesses, notify game over
+        alert("Game Over!  The answer is " + puzzle.toUpperCase() + ".");
+        //see if they want to play again
+        play = confirm("Try Again?");
+        resetGame()
+    }
+}
+
+function resetGame() {
+    if (play) {
+    //reset all of the variables except wins
+    alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    remaining = 12;
+    guessedLetters = [];
+    puzzle = "";
+    convertedWord = [];
+
+    //reset html fields
+    currentWord.textContent = convertedWord;
+    used.textContent = guessedLetters;
+    guesses.textContent = remaining;
+
+    //start new game
+    newGame();
+    }
+}

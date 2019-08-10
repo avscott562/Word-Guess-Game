@@ -7,6 +7,8 @@ var words = ["zoo", "my", "tester", "my first game", "tree", "why do you ask", "
 //current word being solved
 var puzzle;
 
+var convertedWord = [];
+
 //grab current word id
 var currentWord = document.getElementById("currentWord");
 
@@ -37,30 +39,38 @@ var alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N
 var start = 0;
 
 // start game
-document.onkeyup = function(event) {
+function newGame() {
 
-    //computer randomly selects word
-    var computerGuess = words[Math.floor(Math.random() * words.length)];
+        //computer randomly selects word
+        var computerGuess = words[Math.floor(Math.random() * words.length)];
 
-    var convertedWord = [];
-
-    //convert word to underscore
-    for (i=0; i<computerGuess.length; i++) {
         puzzle = computerGuess;
-        if (computerGuess[i] === " ") {
-            convertedWord.push(" ");
-            console.log(convertedWord);
-        } else {
-            convertedWord.push("_");
+    
+        //convert word to underscore
+        for (i=0; i<computerGuess.length; i++) {
+            puzzle = computerGuess;
+            if (computerGuess[i] === " ") {
+                convertedWord.push('\xa0');
+                console.log(convertedWord);
+            } else {
+                convertedWord.push("_");
+            }
+            console.log(puzzle);
         }
-        console.log(puzzle);
-    }
-    currentWord.textContent = convertedWord.join(" ");
+        currentWord.textContent = convertedWord.join(" ");
+    
+        console.log(computerGuess + " " + computerGuess.length);
 
-    // console.log(computerGuess + " " + computerGuess.length);
-};
+}
+
+newGame();
 
 // user guess
+
+// function guessEval() {
+
+// }
+
 document.onkeyup = function(event) {
 
     //capture letter pressed by player
@@ -76,10 +86,27 @@ document.onkeyup = function(event) {
         guessedLetters.push(userGuess.toUpperCase());
 
         //display in guessed letters on screen
-        guesses.textContent = guessedLetters.join(" ");
+        used.textContent = guessedLetters.join(" ");
 
         //remove from available letter list
         alpha.splice(letter, 1);
+
+        // puzzle = "delete";
+
+        // //just for testing
+        // currentWord.textContent = "_ _ _ _ _ _"
+
+        // var wordLetter = puzzle.toUpperCase().indexOf(userGuess.toUpperCase());
+
+        // console.log(wordLetter);
+
+        //use replace() to find letter and replace _ with actual letter
+        
+        // if (wordLetter === -1) {
+        //     remaining--;
+        // } else {
+        //     console.log(wordLetter);
+        // }
     }
 };
 

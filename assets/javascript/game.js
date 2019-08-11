@@ -2,7 +2,19 @@
 //establish variables
 
 //computer word options
-var words = ["zoo", "my", "tester", "my first game", "tree", "why do you ask", "practice", "we", "is", "thinking", "lesson", "random", "xylophone", "dynamic", "wonderful", "enjoy", "amazed", "test this word"];
+var words = ["fame", "i love lucy", "family matters", "martin", "the price is right", 
+"sex and the city", "practical jokers", "jeopardy", "wheel of fortune", "the brady brunch", 
+"good times", "queen sugar", "sopranos", "nypd blue", "everybody loves raymond", "mad men", 
+"the partridge family", "a different world", "family feud", "name that tune", "all my children", 
+"the tonight show", "the arsenio hall show", "the oprah winfrey show", "breaking bad", 
+"friends", "the simpsons", "seinfeld", "the wire", "arrested development", "grownish", 
+"saturday night live", "cheers", "curb your enthusiasm", "the west wing", "all in the family", 
+"the jeffersons", "living single", "the twilight zone", "frasier", "the walking dead", 
+"parks and recreation", "greenleaf", "married at first sight", "orange is the new black", 
+"black mirror", "the real world", "south park", "law and order", "er", "star trek", 
+"six feet under", "the bernie mac show", "scrubs", "the fresh prince of bel air", "lost", 
+"roots", "the andy griffith show", "spongebob squarepants", "house hunters", "american idol", 
+"the voice", "star search", "westworld", "sesame street", "shaka zulu", "the cosby show"];
 
 //current word being solved
 var puzzle = "";

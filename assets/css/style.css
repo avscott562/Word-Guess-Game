@@ -1,3 +1,25 @@
+body {
+    background-image: url("../images/balloon-tv.jpg") !important;
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: 0 250px !important;
+}
+
+header {
+    background: linear-gradient(to bottom left, #00ffff 0%, coral 100%)!important;
+    
+}
+
+h1 {
+    font-family: 'Indie Flower', cursive !important;
+    letter-spacing: 12px !important;
+}
+
+.main {
+    background-color: mistyrose !important;
+    font-size: 1.2em !important;
+    font-family: 'Josefin Sans', sans-serif !important;
+}
 
 /* font families */
 

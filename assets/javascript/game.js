@@ -62,7 +62,6 @@ function newGame() {
 
         //display convertedWord on html
         currentWord.textContent = convertedWord.join(" ");
-        console.log("new game " + puzzle);
 }
 
 //initiate game

@@ -10,16 +10,22 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Indie+Flower|Josefin+Sans|Kanit|Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="jumbotron text-center">
-        <h1>HANGMAN</h1>
+    <!-- <img src="assets/images/family.jpg" class="background" alt="family watching tv">; -->
+    <header class="jumbotron jumbotron-fluid text-center sticky-top">
+        <h1 class="display-1">HANGMAN</h1>
     </header>
 
-    <div>
-        <p>Press any key to get started!</p>
-        <p>Wins:&nbsp;&nbsp;<span id="win">0</span></p>
-        <p>Current Word:&nbsp;&nbsp;<span id="currentWord"></span></p>
-        <p>Number of Guesses Remaining:&nbsp;&nbsp;<span id="guess">0</span></p>
-        <p>Letters Already Guessed:&nbsp;&nbsp; <span id="used"></span></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 main mt-5">
+                <p>Press any key to get started!</p>
+                <p>Wins:&nbsp;&nbsp;<span id="win">0</span></p>
+                <p>Current Word:&nbsp;&nbsp;&nbsp;<span id="currentWord"></span></p>
+                <p>Number of Guesses Remaining:&nbsp;&nbsp;<span id="guess">12</span></p>
+                <p>Letters Already Guessed:&nbsp;&nbsp; <span id="used"></span></p>
+            </div>
+        </div>
     </div>
 
     <!-- add link to javascript file -->

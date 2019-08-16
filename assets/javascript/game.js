@@ -3,7 +3,7 @@
 
 //computer word options
 var words = ["fame", "i love lucy", "family matters", "martin", "the price is right", 
-"sex and the city", "practical jokers", "jeopardy", "wheel of fortune", "the brady brunch", 
+"sex and the city", "impractical jokers", "jeopardy", "wheel of fortune", "the brady brunch", 
 "good times", "queen sugar", "sopranos", "nypd blue", "everybody loves raymond", "mad men", 
 "the partridge family", "a different world", "family feud", "name that tune", "all my children", 
 "the tonight show", "the arsenio hall show", "the oprah winfrey show", "breaking bad", 
@@ -14,7 +14,15 @@ var words = ["fame", "i love lucy", "family matters", "martin", "the price is ri
 "black mirror", "the real world", "south park", "law and order", "er", "star trek", 
 "six feet under", "the bernie mac show", "scrubs", "the fresh prince of bel air", "lost", 
 "roots", "the andy griffith show", "spongebob squarepants", "house hunters", "american idol", 
-"the voice", "star search", "westworld", "sesame street", "shaka zulu", "the cosby show"];
+"the voice", "star search", "westworld", "sesame street", "shaka zulu", "the cosby show", 
+"everybody hates chris", "girlfriends", "how to get away with murder", "blackish", "the office", 
+"being mary jane", "the game", "dateline", "sanford and son", "the brady bunch", "matlock", "dexter", 
+"better call saul", "happy days", "laverne and shirley", "threes company", "monk", "queen of the south", 
+"buffy the vampire slayer", "sister sister", "mad tv", "in living color", "two and a half men", 
+"the king of queens", "the daily show", "private practice", "the practice", "the golden girls", "knight rider", 
+"bewitched", "i dream of jeannie", "taxi", "the facts of life", "family ties", "the wonder years", 
+"alf", "different strokes", "growing pains", "full house", "home improvement", "saved by the bell", 
+"malcolm in the middle", "lost", "empire", "true blood", "power", "veep", "house of cards"];
 
 //current word being solved
 var puzzle = "";

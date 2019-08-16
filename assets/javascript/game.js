@@ -22,7 +22,8 @@ var words = ["fame", "i love lucy", "family matters", "martin", "the price is ri
 "the king of queens", "the daily show", "private practice", "the practice", "the golden girls", "knight rider", 
 "bewitched", "i dream of jeannie", "taxi", "the facts of life", "family ties", "the wonder years", 
 "alf", "different strokes", "growing pains", "full house", "home improvement", "saved by the bell", 
-"malcolm in the middle", "lost", "empire", "true blood", "power", "veep", "house of cards"];
+"malcolm in the middle", "lost", "empire", "true blood", "power", "veep", "house of cards", 
+"quantum leap", "dead zone", "my wife and kids", "the amazing race", "masterchef", "dr pimple popper"];
 
 //current word being solved
 var puzzle = "";
